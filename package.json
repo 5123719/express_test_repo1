@@ -1,0 +1,22 @@
+{
+  "name": "express_test_repo1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/5123719/express_test_repo1.git"
+  },
+  "author": "Zoya",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/5123719/express_test_repo1/issues"
+  },
+  "homepage": "https://github.com/5123719/express_test_repo1#readme",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
+}
