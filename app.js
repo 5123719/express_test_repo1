@@ -4,11 +4,16 @@ const app = express();
 const logger = require('morgan');
 app.use(logger('dev'));
 
+const bodyParser = require('body-parser');
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
+    extended:true
+}));
 
 
-app.get('/api/test', (req, res) => {
+ app.get('/api/test', (req, res) => {
     res.json({ 
-        text: "Hello World" 
+       text: "Hello World" 
     });
  });
 
@@ -38,10 +43,34 @@ app.get('/api/test', (req, res) => {
      })
  })
 
+ //NodeJs server del 2//
+//req.params//
+app.get('/api/test/:id', (req, res) => {
+    console.log(req.params.id);
+    res.json({
+        param: req.params.id
+    });
+});
+
+//req.query//
+app.get('/api/test', (req, res) => {
+    console.log(req.query);
+    res.json({
+        text:"Hello World"
+    });
+});
+
 
 
  app.use(express.static('public'));
 
+ app.post('/api/formular', (req, res) => {
+     res.json({
+         besked:"data blev modtaget",
+         fornavn: req.body.fornavn,
+         efternavn: req.body.efternavn
+     });
+ });
 
 app.listen(3000, (err) => {
     if (err) {
